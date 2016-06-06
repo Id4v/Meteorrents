@@ -1,4 +1,24 @@
 <template name="settings">
-    <h1>Settings</h1>
-    {{> quickForm collection="Config" id="editConfig" type="insert"}}
+    <div class="container">
+        <h1>Settings</h1>
+        {{# autoForm
+            id="settingsForm"
+            collection=Config
+            type="insert"
+        }}
+            <fieldset class="col-md-6">
+                <legend>BetaSeries</legend>
+                {{> afQuickField name='bsLogin'}}
+                {{> afQuickField name='bsPassword'}}
+                {{> afQuickField name='bsKey'}}
+            </fieldset>
+            <fieldset class="col-md-6">
+                <legend>T411</legend>
+                {{> afQuickField name='t411Login'}}
+                {{> afQuickField name='t411Password'}}
+                {{> afQuickField name='t411Key'}}
+            </fieldset>
+            <button type="submit" class="btn btn-success pull-right">Ajouter</button>
+        {{/autoForm}}
+    </div>
 </template>
